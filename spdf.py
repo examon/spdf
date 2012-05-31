@@ -39,7 +39,7 @@
 #
 # pagenumber:
 #	- page number in source.pdf, where you want to split it
-#	- use pagenumber == 0, to split ource.pdf into individual pages
+#	- use pagenumber == 0, to split source.pdf into individual pages
 
 from pyPdf import PdfFileWriter, PdfFileReader
 from sys import argv
