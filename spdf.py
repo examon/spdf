@@ -35,9 +35,11 @@
 #
 # USAGE:
 #
-# $ python spdf.py source.pdf pagenumber
+# 	spdf source.pdf pagenumber
 #
-# pagenumber:
+# where
+#
+# 	pagenumber:
 #	- page number in source.pdf, where you want to split it
 #	- use pagenumber == 0, to split source.pdf into individual pages
 
@@ -109,7 +111,7 @@ def main():
 	print "done!"
 
 def show_help():
-	print "USAGE: %s source.pdf pagenumber" % argv[0]
+	print "USAGE: spdf source.pdf pagenumber"
 	print "pagenumber:"
 	print "  - page number in source.pdf, where you want to split it"
 	print "  - use pagenumber == 0, to split source.pdf into individual pages"
