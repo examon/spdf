@@ -111,7 +111,7 @@ def main():
 	print "done!"
 
 def show_help():
-	print "USAGE: spdf source.pdf pagenumber"
+	print "Usage: spdf source.pdf pagenumber"
 	print "pagenumber:"
 	print "  - page number in source.pdf, where you want to split it"
 	print "  - use pagenumber == 0, to split source.pdf into individual pages"
