@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2012 Tomas Meszaros <exo [at] tty [dot] sk>
@@ -35,11 +35,9 @@
 #
 # USAGE:
 #
-# 	spdf source.pdf pagenumber
+# $ python spdf.py source.pdf pagenumber
 #
-# where
-#
-# 	pagenumber:
+# pagenumber:
 #	- page number in source.pdf, where you want to split it
 #	- use pagenumber == 0, to split source.pdf into individual pages
 
@@ -111,7 +109,7 @@ def main():
 	print "done!"
 
 def show_help():
-	print "Usage: spdf source.pdf pagenumber"
+	print "USAGE: %s source.pdf pagenumber" % argv[0]
 	print "pagenumber:"
 	print "  - page number in source.pdf, where you want to split it"
 	print "  - use pagenumber == 0, to split source.pdf into individual pages"
