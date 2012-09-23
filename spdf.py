@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 # Copyright (C) 2012 Tomas Meszaros <exo [at] tty [dot] sk>
