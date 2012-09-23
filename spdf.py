@@ -42,7 +42,7 @@
 #	- use pagenumber == 0, to split source.pdf into individual pages
 
 from pyPdf import PdfFileWriter, PdfFileReader
-from sys import argv
+from sys import argv, exit
 from getpass import getpass
 
 def main():
@@ -52,23 +52,19 @@ def main():
 	source = []
 	try: source.append(PdfFileReader(file(argv[1], "rb")))
 	except IOError:
-		print "error: file \"%s\" does not exist" % argv[1]
-		return
+		exit("error: file \"%s\" does not exist" % argv[1])
 	
 	# check if is source.pdf encrypted
 	if (source[0].getIsEncrypted()):
 		print "warrning: file \"%s\" is encrypted" % argv[1]
 		pw = getpass("decrypt %s, password: " % argv[1])
 		if (source[0].decrypt(pw) == 0):
-			print "error: sorry, wrong passowrd"
-			return
+			exit("error: sorry, wrong passowrd")
 		else: print "%s has been dencrypted, processing..." % argv[1]
 		
 	# check if pagenumber is a valid number
 	if (split_page > source[0].getNumPages()):
-		print "error: page number \"%d\" does not exist in \"%s\"" \
-				% (split_page, argv[1])
-		return
+		exit("error: page number \"%d\" does not exist in \"%s\"" % (split_page, argv[1]))
 
 	# make names for both parts
 	part1 = argv[1].split('.')[0] + "_part1.pdf"
