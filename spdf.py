@@ -27,9 +27,9 @@
 #
 # DEPENDENCES:
 #
-#	pyPdf
+#	PyPDF2
 #
-# pyPdf can be found at http://pybrary.net/pyPdf/
+# PyPDF2 can be found at http://mstamy2.github.io/PyPDF2/
 #
 # --------------------------------------------------------------------
 #
@@ -41,7 +41,7 @@
 #	- page number in source.pdf, where you want to split it
 #	- use pagenumber == 0, to split source.pdf into individual pages
 
-from pyPdf import PdfFileWriter, PdfFileReader
+from PyPDF2 import PdfFileWriter, PdfFileReader
 from sys import argv, exit
 from getpass import getpass
 
