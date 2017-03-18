@@ -95,13 +95,19 @@ def main():
 	
 	# save first_output to part1
 	outputStream = file(part1, "wb")
-	first_output.write(outputStream)
-	outputStream.close()
+	try:
+		first_output.write(outputStream)
+		outputStream.close()
+	except:
+		print "Error line 102(first_output.write(outputStream), Can't Read this file."
 	
 	# save second_output to part2
 	outputStream = file(part2, "wb")
-	second_output.write(outputStream)
-	outputStream.close()
+	try:
+		second_output.write(outputStream)
+		outputStream.close()
+	except:
+		print "Error line 110(second_output.write(outputStream), Can't Read this file."
 	print "done!"
 
 def show_help():
