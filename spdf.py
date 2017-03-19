@@ -46,11 +46,13 @@ from sys import argv, exit
 from getpass import getpass
 
 def main():
+	#last argv that makes pdf split at given page
 	split_page = int(argv[2])
 	
 	# try load source.pdf to source[]
 	source = []
-	try: source.append(PdfFileReader(file(argv[1], "rb")))
+	try:
+		source.append(PdfFileReader(file(argv[1], "rb")))
 	except IOError:
 		exit("error: file \"%s\" does not exist" % argv[1])
 	
@@ -60,10 +62,11 @@ def main():
 		pw = getpass("decrypt %s, password: " % argv[1])
 		if (source[0].decrypt(pw) == 0):
 			exit("error: sorry, wrong passowrd")
-		else: print "%s has been dencrypted, processing..." % argv[1]
+		else: 
+			print "%s has been dencrypted, processing..." % argv[1]
 		
 	# check if pagenumber is a valid number
-	if (split_page > source[0].getNumPages()):
+	if (split_page >= source[0].getNumPages()):
 		exit("error: page number \"%d\" does not exist in \"%s\"" % (split_page, argv[1]))
 
 	# make names for both parts
@@ -95,6 +98,7 @@ def main():
 	
 	# save first_output to part1
 	outputStream = file(part1, "wb")
+	#try to test is the file is compatible
 	try:
 		first_output.write(outputStream)
 		outputStream.close()
@@ -103,6 +107,7 @@ def main():
 	
 	# save second_output to part2
 	outputStream = file(part2, "wb")
+	#try to test is the file is compatible
 	try:
 		second_output.write(outputStream)
 		outputStream.close()
